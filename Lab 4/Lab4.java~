@@ -1,0 +1,11 @@
+public class Lab4 {
+  public static void main(String[] args){
+    fMethod("RUN");
+  }
+  
+  public static String fMethod(String s) {
+    String output = s + "*" + s;
+    return output;   
+  }
+}
+  

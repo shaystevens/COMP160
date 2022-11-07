@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class EvenSumApp{
+  public static void main(String[]args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter an interger greater than 1");
+    int input = scan.nextInt(); 
+    while(input < 2){ // loop continues while the condition remains true
+      System.out.println("Input value must not be less than 2");
+      
+    }
+  }
+}

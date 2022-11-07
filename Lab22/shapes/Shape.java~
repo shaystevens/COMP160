@@ -1,0 +1,33 @@
+import java.awt.*;
+import java.util.*;
+public class Shape{
+   private int x;
+   private int y;
+   private int width;
+   private int height;
+   private Color colour;
+   
+   public Shape(){
+      width = randomRange(10,30);
+      height = width;
+      x = randomRange(0, 400);
+      y = randomRange(0, 400);
+      int red = randomRange(0, 255);
+      int green = randomRange(0, 255);
+      int blue = randomRange(0, 255);
+      colour = new Color(red, green, blue);
+   
+   }
+   
+   public int randomRange(int low, int high){
+     Random generator = new Random();
+     return generator.nextInt(high-low+1) + low;
+   }
+   
+   public void display(Graphics page){
+      page.setColor (colour);
+      page.fillOval (x, y, width, height);
+      
+   
+   }
+}

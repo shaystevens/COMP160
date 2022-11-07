@@ -1,0 +1,18 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class TrianglePanel extends JPanel{
+  private final DIMENSIONS = 400;
+  
+  public TrianglePanel(){
+    setPreferredSize(new Dimension(DIMENSIONS,DIMENSIONS));
+    setBackground (Color.white);
+  }
+  
+  public void paintComponent(Graphics g){
+    for (int x = 40; x < DIMENSIONS; x += 40){
+      g.drawLine(x, 0, x, DIMENSIONS);
+      g.drawLine(0, x, 0 DIMENSIONS);
+    }
+  }
+}

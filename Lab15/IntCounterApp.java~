@@ -1,0 +1,30 @@
+import java.util.*;
+public class IntCounterApp{
+  public static void main(String[] args){
+    Scanner sc = new Scanner( System.in ); 
+    int x = 1;
+    while (x <= 3){
+      System.out.println( "Which number do you wish to find? " );
+      int target = sc.nextInt();
+      IntCounter array = new IntCounter(makeArray());
+      array.showTarget(target);
+      x ++;
+    }
+    System.out.println("\nFinished");
+  }//end method
+  
+  public static int[] makeArray(){
+    int [] array = new int[randomRange(5, 10)];
+    for (int index = 0; index < array.length; index++){
+      array[index] = randomRange(0, 4);
+    }
+    return array; 
+  }//end method
+  
+  
+  public static int randomRange(int low, int high){
+    Random generator = new Random();
+    return generator.nextInt(high-low+1) + low;
+    
+  }//end method
+}//end class

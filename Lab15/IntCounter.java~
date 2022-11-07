@@ -1,0 +1,19 @@
+public class IntCounter {
+  private int[] numArray;
+  
+  public IntCounter(int[] numArray){
+    this.numArray = numArray;
+    for(int element:numArray){
+      System.out.print(element + " ");
+    }
+    System.out.println("Array is of length " + numArray.length);
+  }//end method
+  
+  public void showTarget(int target){
+    for (int index = 0; index < numArray.length; index++){
+      if (numArray[index] == target){
+        System.out.println("There is a " + target + " in position position " + index);
+      }
+    } 
+  }//end method
+}//end class

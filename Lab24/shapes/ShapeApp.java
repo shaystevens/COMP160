@@ -1,0 +1,12 @@
+//stesh969
+package shapes;
+import javax.swing.JFrame;
+public class ShapeApp{
+  public static void main(String[] args){
+    JFrame frame = new JFrame("Lab 24"); //set text to Lab 24
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //closes application
+    frame.getContentPane().add(new ShapePanel()); //add new instance of ShapePanel
+    frame.pack();
+    frame.setVisible(true);
+  }
+}

@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class GuessAnimal{
+    static String[] animalGuessList = new String[3];
+    public static void main(String[]args){
+        String[] animalLongList = {"aadvark", "ant", "beaver", "Cheetah", "dingo", "elephant", "giraffe", "hippopotamus", "iguana", "Jaguar", "Lion","monkey"};
+        Scanner sc = new Scanner( System.in );
+        
+        for (int i = 0; i < 3; i++){
+            int pick;
+           
+            do{
+               System.out.println("Pick a number between 0 and " + (animalLongList.length-1));
+                  pick = sc.nextInt();
+                  
+                  if (pick < 0 || pick >= animalLongList.length){
+                  System.out.println("not valid - try again");
+                  }                   
+                  
+             } while(pick < 0 || pick >= animalLongList.length);
+            animalGuessList[i] = animalLongList[pick]; 
+        }
+        
+        for (String animal: animalGuessList){
+            System.out.print("Guess what animal I am? " + animal.charAt(0) + animal.charAt(1));
+            for (int index = 0; index < (animal.length() -2); index ++){
+               System.out.print(" _");
+            }
+            System.out.println();
+            
+            boolean Incorrect = true;
+            while (Incorrect){
+            String guess = sc.next();
+            if ((guess.toLowerCase()).equals(animal.toLowerCase())){
+               System.out.println("Correct");
+               Incorrect = false;
+            }
+            else{
+               System.out.println("Incorrect");
+            }
+            }
+        }
+
+    }
+}

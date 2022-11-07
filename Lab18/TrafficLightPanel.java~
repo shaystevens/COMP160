@@ -1,0 +1,89 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class TrafficLightPanel extends JPanel {
+   private JButton redButton;
+   private JButton greenButton;
+   private JButton amberButton;
+   private JLabel lastPressedLabel;
+   private JPanel buttonPanel;
+   
+   public TrafficLightPanel() {
+      redButton = new JButton("Red");
+      greenButton = new JButton("Green");
+      amberButton = new JButton("Amber");
+      
+      ButtonListener listener = new ButtonListener();
+      redButton.addActionListener(listener);
+      greenButton.addActionListener(listener);
+      amberButton.addActionListener(listener);
+      
+      lastPressedLabel = new JLabel("last pressed");
+      
+      buttonPanel = new JPanel();
+      buttonPanel.setPreferredSize(new Dimension(80, 290));
+      buttonPanel.setBackground(Color.white);
+      buttonPanel.add(redButton);
+      buttonPanel.add(amberButton);
+      buttonPanel.add(greenButton);
+      
+      LightPanel lightPanel = new LightPanel();
+      
+      setPreferredSize(new Dimension(200,300));
+      setBackground(Color.blue);
+      add(buttonPanel); 
+      add(lightPanel);  
+   }
+   
+   private class ButtonListener implements ActionListener {
+      public void actionPerformed (ActionEvent event) {
+      if (event.getSource() == redButton){
+         lastPressedLabel.setText("red");
+      }
+      
+      else if (event.getSource() == amberButton){
+         lastPressedLabel.setText("amber");
+      }
+      
+      else if (event.getSource() == greenButton){
+         lastPressedLabel.setText("green");
+      }
+      repaint();
+    }
+   }
+   
+   private class LightPanel extends JPanel {
+      public LightPanel() {
+        setPreferredSize(new Dimension(80,290));
+        setBackground(Color.cyan);
+      
+      }
+      
+      public void paintComponent(Graphics page){
+         super.paintComponent(page);
+         page.setColor (Color.black);
+         page.fillOval(20,30,40,40);
+         page.fillOval(20,90,40,40);
+         page.fillOval(20,150,40,40);
+         
+         if ((lastPressedLabel.getText()).equals("red")){
+            page.setColor (Color.red);
+            page.fillOval(20,30,40,40);
+         }
+         
+         else if ((lastPressedLabel.getText()).equals("amber")){
+            page.setColor (Color.orange);
+            page.fillOval(20,90,40,40);
+         }
+         
+         else if ((lastPressedLabel.getText()).equals("green")){
+            page.setColor (Color.green);
+            page.fillOval(20,150,40,40);
+         }
+         
+            
+      
+      }
+ }
+ }

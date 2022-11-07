@@ -1,0 +1,28 @@
+package shapes;
+import java.awt.*;
+public class Smiley extends Shape{
+  public Smiley() {
+   height = 30;
+   width = 30;
+   x = randomRange(0, (400-width)); //set x data field to a random value between 0-400 
+   y = randomRange(0, (400-height)); //set y data field to a random value between 0-400
+  }
+  
+  public void display(Graphics page){
+    page.setColor (Color.black);
+    page.fillOval (x-1, y-1, width+2, height+2);
+    page.setColor (Color.yellow);
+    page.fillOval (x, y, width, height);
+    
+    page.setColor (Color.black);
+    page.fillOval (x+7, y+8, 4, 4);
+    page.fillOval (x+20, y+8, 4, 4);
+    if (moveY == -1){
+    page.drawArc (x+8, y+10, 15, 13, 190, 160);
+    }
+    else if (moveY == 1){
+      page.drawArc (x+8, y+15, 15, 13, 0, 180);
+    }
+    
+  }//end method
+}

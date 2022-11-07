@@ -1,0 +1,7 @@
+public class Roses {
+  public static void main(String[] args) {
+    System.out.println('Sugar is sweet, \n\tBut I have "commitment issues"');
+  }
+}
+                         
+                      

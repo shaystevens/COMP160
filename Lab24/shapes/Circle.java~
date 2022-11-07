@@ -1,0 +1,8 @@
+package shapes;
+import java.awt.*;
+public class Circle extends Shape{
+  public void display(Graphics page){
+    page.setColor (colour); //set page Color to colour data field
+    page.fillOval (x, y, width, height); //draw oval at using data field values
+  }//end method
+}//end class
